@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true" public="false"/>
+
+        <prototype namespace="KiamoPackage\AppsBundle\Service\" resource="../../Service/*"/>
+
+        <service id="KiamoPackage\AppsBundle\Service\LoggerService">
+            <tag name="monolog.logger" channel="kiamoapps"/>
+            <argument type="service" id="logger" on-invalid="null"/>
+        </service>
+
+        <service id="KiamoPackage\AppsBundle\Service\HttpRequest\ApiRequestService">
+            <argument></argument> <!-- will be filled in with host dynamically -->
+            <argument></argument> <!-- will be filled in with port dynamically -->
+            <argument></argument> <!-- will be filled in with timeout dynamically -->
+        </service>
+
+        <service id="KiamoPackage\AppsBundle\Service\ConfigService">
+            <argument key="$managerRegistry" type="service" id="doctrine"/>
+            <argument key="$entityClass"></argument> <!-- will be filled in with entity_class dynamically -->
+        </service>
+    </services>
+</container>

@@ -1,0 +1,38 @@
+{
+  "name": "kiamopackage/apps",
+  "description": "Kiamo Apps connection component",
+  "keywords": [
+    "kiamo",
+    "component"
+  ],
+  "homepage": "https://kiamo.com",
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "Kiamo",
+      "email": "info@kiamo.com",
+      "homepage": "http://www.kiamo.com",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "KiamoPackage\\AppsBundle\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4.5",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "doctrine/doctrine-bundle": "^1.11.2",
+    "doctrine/orm": "^2.7.2",
+    "symfony/console": "4.4.7",
+    "symfony/framework-bundle": "^4.4.7",
+    "symfony/monolog-bundle": "^3.5.0"
+  },
+  "license": "MIT",
+  "config": {
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
